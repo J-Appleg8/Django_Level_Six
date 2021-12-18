@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +11,26 @@
         crossorigin="anonymous">
     <title>Base</title>
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="{% url 'admin:index' %}">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="{% url 'basic_app:list' %}">Schools</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         {% block contents %}
         {% endblock %}
     </div>
-    
+
 </body>
+
 </html>
