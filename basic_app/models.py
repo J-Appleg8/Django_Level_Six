@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 from django.db.models.fields import CharField, PositiveBigIntegerField
 from django.db.models.fields.related import ForeignKey
+from django.urls import reverse
 
 
 class School(models.Model):
@@ -11,6 +12,9 @@ class School(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("basic_app:detail", kwargs={"pk": self.pk})
 
 
 class Student(models.Model):
